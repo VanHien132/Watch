@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="shop_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Latest Watches
+        </h2>
+      </div>
+      <div class="row" data-bind="foreach:$root.array">
+        <div class="col-sm-6 col-xl-3" data-bind="click:$root.Update">
+          <div class="box">
+            @*<a href="">*@
+              <div class="img-box">
+                <img src="./asset/images/w4.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6 data-bind="text:name">
+                  
+                </h6>
+                <h6>
+                  Price:
+                  <span td data-bind="text:priceB">
+                    
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  New
+                </span>
+              </div>
+            @*</a>*@
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="">
+          View All
+        </a>
+      </div>
+    </div>
+    <div id="modal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="col-form-label" for="name">Tên: </label>  <input class="form-control" type="text" id="name" disabled><br />
+                </div>
+                <div class="mb-3">
+                    <label class="col-form-label" for="mount">Số lượng </label> <input class="form-control" type="text" id="mount" /><br />
+                </div>
+              
+
+                 <div class="mb-3">
+                    <label class="col-form-label" for="priceB">Giá: </label> <input class="form-control" type="text" id="priceB" disabled /><br />
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" data-bind="click:$root.save">Thêm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  </section>
+
+  @section Scripts{
+
+        <script src="~/js/UserProduct.js"></script>
+    }

@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewData["Title"] = "OrderManager";
+    
+}
+<h1 align="center">Danh mục đơn hàng </h1>
+    <p>
+
+       <button type="button" class="btn btn-primary" data-bind="click:$root.Create">Tạo Mới</button>
+    </p>
+   
+<div align="center"> 
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                <th>
+                    Tên 
+                </th>
+                <th>
+                    Xuất xứ
+                </th>
+
+                <th>
+                    Chú thích
+                </th>
+                <th>
+                    Thay đổi
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody data-bind="foreach:$root.array">
+            <tr>
+                <td data-bind="text:id">
+                </td>
+                <td data-bind="text:name">
+                </td>
+                <td data-bind="text:address">
+                </td>
+                 <td data-bind="text:decription">
+                </td>
+             
+                <td>
+                   
+                    <button class="btn btn-primary" id="Update" data-bind="click:$root.Update">Sửa</button> |        
+                    <button class="btn btn-primary" id="Delete" data-bind="click:$root.del">Xóa</button>
+                </td>
+                
+            </tr>
+        </tbody>
+    </table>
+    <div id="modal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="col-form-label" for="name">Tên: </label>  <input class="form-control" type="text" id="name"><br />
+                </div>
+                <div class="mb-3">
+                    <label class="col-form-label" for="address">Xuất xứ:</label> <input class="form-control" type="text" id="address"><br />
+                </div>
+                <div class="mb-3">
+                    <label class="col-form-label" for="decription">Chú thích: </label> <input class="form-control" type="text" id="decription" /><br />
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" data-bind="click:$root.save">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+ @section Scripts{
+
+        <script src="~/js/ManagerCategory.js"></script>
+    }
